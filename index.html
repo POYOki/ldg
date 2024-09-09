@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="LDG: Lightweight Deformable Gaussians for Single View Dynamic Scene Reconstruction.">
+  <meta name="keywords" content="Single-view Reconstruction, Dynamic Scene Reconstruction, 3D Gaussian Splatting, Knowledge Distillation.">
+  <title>LDG: Lightweight Deformable Gaussians for Single View Dynamic Scene Reconstruction.</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <link rel="stylesheet" href="./static/css/ppage.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">LDG: Lightweight Deformable Gaussians for Single View Dynamic Scene Reconstruction</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+            <span class="author-block">
+              Youhong Peng<sup>1</sup>,
+            </span>
+              Weixing Xie<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Jinwen Li<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Shaoqi Wu<sup>1</sup>,
+            </span><br>
+            <span class="author-block">
+              Xiao Dong<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Zefeng Wang<sup>1</sup>
+            <span>
+            <span class="author-block">
+              Junfeng Yao<sup>1,*</sup>,
+            </span>
+          </div>
+              
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Xiamen University</span><br>
+            <span class="author-block"><sup>2</sup>BNU-HKBU United International College</span><br>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://poyoki.github.io/ldg/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://poyoki.github.io/ldg/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://poyoki.github.io/ldg/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://poyoki.github.io/ldg/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://poyoki.github.io/ldg/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<div class="container">
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/method.png" alt="method" height="100%">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf"> Architecture of our LDG network.
+      </h2>
+    </div>
+  </div>
+ </div>
+</section>
+  
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Most people use mobile phones for shooting or live streaming, leading to an increasing number of single view videos and a growing demand for the reconstruction and editing of single view scenes.
+            Recent deformable 3D Gaussians methods achieve high-quality reconstruction and real-time rendering.
+            However, they require multi-view information and are not applicable to single view dynamic scenes.
+            Additionally, the high-dimensional hidden layer of deformation MLP, the excessive number of Gaussian primitives and the high-dimensional Gaussian attributes, all impose significant storage pressure, greatly limiting their practical use. 
+            To address the issues, we propose a novel Lightweight Deformable Gaussians teacher-student framework that alleviates the storage pressure of single view dynamic scenes. 
+            Specifically, we initialize the Gaussian position and color based on the RGB image and depth image of the first frame, and then optimize the teacher model using color and depth information.
+            In order to reduce the high storage and improve rendering efficiency of the teacher model, we distill deformation MLP, prune Gaussian primitives and Gaussian attributes, and finally obtain a student model with low storage and high efficiency.
+            Public benchmark experiments demonstrate the effectiveness of our framework, showing a half reduction in file size while maintaining satisfactory rendering quality.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+        <h3 class="title is-4">Comparison Experiments</h3>
+        <div class="content has-text-justified">
+          <p>
+           Comparison with D-NeRF*, DRSM and Deformable 3D Gaussians:
+          </p>
+        </div>
+
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="90%">
+            <source src="./static/video/lion-5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="90%">
+            <source src="./static/video/ma-5.mp4"
+                    type="video/mp4">
+          </video>
+          <p>D-NeRF* is a modified version of the original model with depth supervision, which is fairly compared with our method.</p>
+        </div>
+    
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+        <div class="content has-text-justified">
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a>: A method for synthesizing novel views, at an arbitrary point in time, of dynamic scenes with complex non-rigid geometries.
+          <p>
+            <a href="https://github.com/chenjingze/DRSM">DRSM</a>: A novel framework a novel neural 4D decomposition for dynamic reconstruction from single-view videos to tackle 4D decomposition problem for dynamic scenes in monocular cameras.
+          <p>
+          <p>
+            <a href="https://ingra14m.github.io/Deformable-Gaussians/">Deformable 3D Gaussians</a>: A method that reconstructs scenes using explicit 3D Gaussians and learns Gaussians in canonical space with a deformation field to model monocular dynamic scenes. 
+          <p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+              
+  </div>
+</section>
+              
+              
+<section class="section" id="Contact">
+  <hr>
+  <div class="container is-max-desktop content">
+    <p>If you have any questions or feedbacks, please contact Youhong Peng (<a href="mailto:p1207510984@gmail.com">p1207510984@gmail.com</a>).</p>
+  </div>
+</section>
+              
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+              
+
+
+</body>
+</html>
