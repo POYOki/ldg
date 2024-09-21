@@ -166,14 +166,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Most people use mobile phones for shooting or live streaming, leading to an increasing number of single view videos and a growing demand for the reconstruction and editing of single view scenes.
             Recent deformable 3D Gaussians methods achieve high-quality reconstruction and real-time rendering.
-            However, they require multi-view information and are not applicable to single view dynamic scenes.
-            Additionally, the high-dimensional hidden layer of deformation MLP, the excessive number of Gaussian primitives and the high-dimensional Gaussian attributes, all impose significant storage pressure, greatly limiting their practical use. 
-            To address the issues, we propose a novel Lightweight Deformable 3D Gaussians teacher-student framework that alleviates the storage pressure of single view dynamic scenes. 
-            Specifically, we initialize the Gaussian position and color based on the RGB image and depth image of the first frame, and then optimize the teacher model using color and depth information.
-            In order to reduce the high storage and improve rendering efficiency of the teacher model, we distill deformation MLP, prune Gaussian primitives and Gaussian attributes, and finally obtain a student model with low storage and high efficiency.
-            Public benchmark experiments demonstrate the effectiveness of our framework, showing a half reduction in file size while maintaining satisfactory rendering quality.
+            However, they require multi-view information and are not applicable to single-view dynamic scenes captured from mobile phones. 
+            Additionally, the high-dimensional hidden layer of deformation MLP and the excessive number of Gaussian primitives and attributes impose significant storage pressure, greatly limiting their practical application. 
+            To address the issues, we propose a novel Lightweight Deformable 3D Gaussians teacher-student framework. 
+            Specifically, we initialize Gaussian primitives with an initialization strategy designed for single-view scenes, and then optimize the teacher model using color and depth information. 
+            For the trained teacher model, we distill deformation MLP, prune Gaussian primitives and Gaussian attributes, and finally obtain a student model with low storage and high efficiency. 
+            Public benchmark experiments demonstrate the effectiveness of our framework, showing a compression rate exceeding 4× while maintaining satisfactory rendering quality.
           </p>
         </div>
       </div>
@@ -187,7 +186,7 @@
         <h3 class="title is-4">Comparison Experiments</h3>
         <div class="content has-text-justified">
           <p>
-           Comparison with D-NeRF*, DRSM and Deformable 3D Gaussians:
+           Comparison with D-NeRF*, DRSM and Deformable 3D-GS*:
           </p>
         </div>
 
@@ -213,7 +212,7 @@
             <source src="./static/video/ma-5.mp4"
                     type="video/mp4">
           </video>
-          <p>D-NeRF* is a modified version of the original model with depth supervision, which is fairly compared with our method.</p>
+          <p>D-NeRF* and Deformable 3D-GS* are  modified versions of the original model with depth supervision, which are fairly compared with our method.</p>
         </div>
     
     <!-- Concurrent Work. -->
