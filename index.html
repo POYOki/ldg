@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-        content="LDG: Lightweight Deformable Gaussians for Single View Dynamic Scene Reconstruction.">
+        content="LDG: Lightweight Deformable 3D Gaussians for Single View Dynamic Scene Reconstruction.">
   <meta name="keywords" content="Single-view Reconstruction, Dynamic Scene Reconstruction, 3D Gaussian Splatting, Knowledge Distillation.">
-  <title>LDG: Lightweight Deformable Gaussians for Single View Dynamic Scene Reconstruction.</title>
+  <title>LDG: Lightweight Deformable 3D Gaussians for Single View Dynamic Scene Reconstruction.</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -52,7 +52,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">LDG: Lightweight Deformable Gaussians for Single View Dynamic Scene Reconstruction</h1>
+          <h1 class="title is-2 publication-title">LDG: Lightweight Deformable 3D Gaussians for Single View Dynamic Scene Reconstruction</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
             <span class="author-block">
@@ -170,7 +170,7 @@
             Recent deformable 3D Gaussians methods achieve high-quality reconstruction and real-time rendering.
             However, they require multi-view information and are not applicable to single view dynamic scenes.
             Additionally, the high-dimensional hidden layer of deformation MLP, the excessive number of Gaussian primitives and the high-dimensional Gaussian attributes, all impose significant storage pressure, greatly limiting their practical use. 
-            To address the issues, we propose a novel Lightweight Deformable Gaussians teacher-student framework that alleviates the storage pressure of single view dynamic scenes. 
+            To address the issues, we propose a novel Lightweight Deformable 3D Gaussians teacher-student framework that alleviates the storage pressure of single view dynamic scenes. 
             Specifically, we initialize the Gaussian position and color based on the RGB image and depth image of the first frame, and then optimize the teacher model using color and depth information.
             In order to reduce the high storage and improve rendering efficiency of the teacher model, we distill deformation MLP, prune Gaussian primitives and Gaussian attributes, and finally obtain a student model with low storage and high efficiency.
             Public benchmark experiments demonstrate the effectiveness of our framework, showing a half reduction in file size while maintaining satisfactory rendering quality.
